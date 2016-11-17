@@ -1,0 +1,41 @@
+/*Css para Trello*/
+.row{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.img-back{
+    background-image: url(../imagen/fondo-taxi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    min-height: 500px;
+ /*   height: 700px; */
+    /*alto por definir*/
+}
+.logo{
+    width: 100%;
+    padding: 50px;    
+}
+.capa{
+    background-color: rgba(0,0,0,0.4);
+/*    height: 700px;*/
+    /*alto por definir*/
+}
+.btn-out, .btn-in{
+    padding: 12px;
+    font-size: 20px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 15px;
+    margin: 90px 14px 40px 14px;
+}
+.btn-out:hover, .btn-in:hover{
+    border: none;
+    background-color: #ef0076;
+}
+.btn-next{
+    display: inline-block;
+    align-content: center;
+}
+

@@ -1,4 +1,6 @@
-/*Css para Trello*/
+*{
+    font-family: 'Poppins';
+}
 .row{
     margin: 0;
     padding: 0;
@@ -9,33 +11,252 @@
     background-size: cover;
     background-repeat: no-repeat;
     width:100%;
-    min-height: 500px;
+    min-height: 100vh;
  /*   height: 700px; */
     /*alto por definir*/
 }
 .logo{
     width: 100%;
-    padding: 50px;    
+    padding: 100px;    
 }
 .capa{
     background-color: rgba(0,0,0,0.4);
+    min-height: 100vh;
 /*    height: 700px;*/
     /*alto por definir*/
 }
 .btn-out, .btn-in{
     padding: 12px;
-    font-size: 20px;
+    font-size: 18px;
     border: 2px solid white;
     color: white;
-    border-radius: 15px;
-    margin: 90px 14px 40px 14px;
+    border-radius: 10px;
 }
-.btn-out:hover, .btn-in:hover{
+.btn-out:hover, .btn-in:hover{  
     border: none;
-    background-color: #ef0076;
+    background: rgba(179,220,237,0.4);
+    background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,220,237,1)), color-stop(0%, rgba(41,184,229,1)), color-stop(100%, rgba(239,0,118,1)));
+    background: -webkit-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
+    background: -o-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
+    background: -ms-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
+    background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#ef0076', GradientType=1 );
+}
+.fa-chevron-left:hover{
+    color: rgba(179,220,237,0.4);
+}
+.fa-chevron-left{
+    font-size: 30px;
+    color: #ef0076;
+    padding: 10px;
 }
 .btn-next{
     display: inline-block;
     align-content: center;
 }
+/*PARA SELECTOR DE PAISES*/
+#country-select{
+    padding-left: 0;
+    width: 100%;
+}
+#country-select span{
+    z-index: 3;
+}
+.wrapper {
+    width:300px;
+    margin:3% auto;
+    border-radius: 5px;
+}
+.dropdown dd, .dropdown dt, .dropdown ul {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+}
+.dropdown dd ul li a span:first-child, .dropdown dt a span span:first-child {
+    background-image: url('http://i.imgur.com/OQiDoZe.png');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    margin:5px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+.dropdown dt a span {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.dropdown dt a img {
+    position: relative;
+    z-index: 1;
+}
+.dropdown dt a span span:first-child:before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 10px;
+    /*box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;*/
+    border-radius: 5px;
+}
+.dropdown dt a span span {
+    display: inline-block;
+    padding: 0;
+}
+.dropdown dt a span span:first-child {
+    padding: 0;
+}
+.dropdown dd {
+    position: relative;
+    border-radius: 5px;
+}
+.dropdown a, .dropdown a:visited {
+    color: #4a535f;
+    text-decoration: none;
+    outline: none;
+    border-radius: 5px;
+}
+.dropdown a:hover {
+    color: #5d4617;
+}
+.dropdown dt a:hover, .dropdown dt a:focus {
+    color: #5d4617;
+}
+.dropdown dt a {
+    position: relative;
+    background: white;
+    display: block;
+    padding-right: 20px;
+    overflow: hidden;
+    border:1px solid #ef0076;
+    width:250px;
+
+}
+.dropdown dt a:after {
+    content: '';
+    background: #ef0076;
+    position: absolute;
+    border-radius: 5px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+}
+
+.dropdown dt a:before {
+    background: none repeat scroll 0 0 #FFFFFF;
+    content: "";
+    height: 3px;
+    position: absolute;
+    right: 7px;
+    top: 6px;
+    width: 20px;
+    z-index: 2;
+    box-shadow:0 8px 0 #FFFFFF, 0 16px 0 #FFFFFF;
+}
+.dropdown dd ul {
+    background: white;
+    border-radius: 5px;
+    color: #C5C0B0;
+    /*display: none;*/
+    left: 0px;
+    padding: 5px 5px;
+    position: absolute;    
+    width: 270px;
+    border:1px solid #ef0076;
+    list-style: none;
+    max-height: 170px;
+    overflow-y: scroll;
+    top:10px;
+    z-index: 2;
+}
+
+li a {
+    font-size:13px;
+}
+
+li a span:nth-child(2) {
+    line-height: 1em;
+}
+.dropdown dd ul::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+ border-left:1px solid rgba(0,0,0,0.1);
+}
+.dropdown dd ul::-webkit-scrollbar-thumb {
+ background: rgba(0,0,0,0.4);
+}
+.dropdown dd ul::-webkit-scrollbar-thumb:window-inactive {
+ background: blue;
+}
+/*.dropdown span.value {
+    display: none;
+}*/
+.dropdown dd ul li a {
+    padding: 5px;
+    display: block;
+    font-size: 12px !important;
+}
+.dropdown dd ul li a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+dl.dropdown {
+    display: inline-block;
+    width: 240px;
+    margin: -3px 0 0 1px;
+}
+dl.dropdown span:nth-child(3) {
+    color: rgba(0,0,0,0.4)
+}
+dl.dropdown > span:nth-child(2) {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+dl.dropdown span:nth-child(3) {
+    float: right;
+}
+dl.dropdown dt span:nth-child(2) {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.6em;
+}
+dl.dropdown dt span:nth-child(3) {
+    padding-right: 17px;
+}
+.countryFlag {
+    padding: 0;
+    background-image: url("http://i.imgur.com/OQiDoZe.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 11px;
+    margin-right: 4px;
+    width: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #BFBFC1 #B6B6B6 #969696;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.09);
+    border-radius: 5px;
+}
+/*FIN DE CSS PARA DESPLEGABLE DE PAÍSES*/
+.input-fono{
+    margin-top: 20px;
+    padding-right: 40px;
+    border-radius: 5px;
+}
+
+
+
 

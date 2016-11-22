@@ -32,7 +32,13 @@
     color: white;
     border-radius: 10px;
 }
-.btn-out:hover, .btn-in:hover{  
+.btn-next{
+    background-color: #FC07BF;;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+}
+.btn-out:hover, .btn-in:hover, .btn-next:hover{  
     border: none;
     background: rgba(179,220,237,0.4);
     background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
@@ -47,9 +53,10 @@
     color: rgba(179,220,237,0.4);
 }
 .fa-chevron-left{
-    font-size: 30px;
-    color: #ef0076;
+    font-size: 27px;
+    color: #747582;
     padding: 10px;
+    margin-top: 15px;
 }
 .btn-next{
     display: inline-block;
@@ -64,8 +71,7 @@
     z-index: 3;
 }
 .wrapper {
-    width:300px;
-    margin:3% auto;
+    width:100%;
     border-radius: 5px;
 }
 .dropdown dd, .dropdown dt, .dropdown ul {
@@ -131,13 +137,13 @@
     display: block;
     padding-right: 20px;
     overflow: hidden;
-    border:1px solid #ef0076;
-    width:250px;
+    border:1px solid #FC07BF;
+    width:100%;
 
 }
 .dropdown dt a:after {
     content: '';
-    background: #ef0076;
+    background: #FC07BF;
     position: absolute;
     border-radius: 5px;
     height: 32px;
@@ -146,7 +152,6 @@
     top: 0;
     width: 35px;
 }
-
 .dropdown dt a:before {
     background: none repeat scroll 0 0 #FFFFFF;
     content: "";
@@ -166,19 +171,17 @@
     left: 0px;
     padding: 5px 5px;
     position: absolute;    
-    width: 270px;
-    border:1px solid #ef0076;
+    width: 100%;
+    border:1px solid #FC07BF;;
     list-style: none;
     max-height: 170px;
     overflow-y: scroll;
     top:10px;
     z-index: 2;
 }
-
 li a {
     font-size:13px;
 }
-
 li a span:nth-child(2) {
     line-height: 1em;
 }
@@ -192,9 +195,6 @@ li a span:nth-child(2) {
 .dropdown dd ul::-webkit-scrollbar-thumb:window-inactive {
  background: blue;
 }
-/*.dropdown span.value {
-    display: none;
-}*/
 .dropdown dd ul li a {
     padding: 5px;
     display: block;
@@ -251,10 +251,25 @@ dl.dropdown dt span:nth-child(3) {
     border-radius: 5px;
 }
 /*FIN DE CSS PARA DESPLEGABLE DE PAÍSES*/
+.input-div{
+    align-content: center;
+}
 .input-fono{
-    margin-top: 20px;
-    padding-right: 40px;
     border-radius: 5px;
+    margin: 2% 10%;
+    width: 80%;
+}
+.text-send{
+    margin: 20px;
+}
+.alert_hide{
+  margin: 3px 0;
+  display: block;
+  background-color: rgba(51,51,51,0.8);
+  padding: 2px 8px;
+  color: white;
+  text-align: center;
+  border-radius: none !important;
 }
 
 

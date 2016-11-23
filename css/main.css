@@ -32,13 +32,16 @@
     color: white;
     border-radius: 10px;
 }
-.btn-next{
+.btn-next, .btn-next2{
     background-color: #FC07BF;;
     color: white;
     padding: 15px;
     margin-top: 40px;
 }
-.btn-out:hover, .btn-in:hover, .btn-next:hover{  
+.btn-next2{
+    display: none;
+}
+.btn-out:hover, .btn-in:hover, .btn-next:hover, .btn-next2:hover{  
     border: none;
     background: rgba(179,220,237,0.4);
     background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 0%, rgba(239,0,118,1) 100%);
@@ -271,7 +274,39 @@ dl.dropdown dt span:nth-child(3) {
   text-align: center;
   border-radius: none !important;
 }
-
-
-
+.valNombre, .valEmail {
+    border-radius: 5px;
+    border: 2px solid #747582;
+    margin-top: 5px;
+}
+.valNombre input{
+    width: 46%;
+}
+.valEmail input{
+    width: 91%;
+}
+.valNombre input, .valEmail input{
+    border-style: none;
+    padding: 4px;
+    margin: 1px;
+}
+*::-webkit-input-placeholder {
+    /* Google Chrome y Safari */
+     font-size: 12px;
+}
+*:-moz-placeholder {
+    font-size: 12px;
+}
+*::-moz-placeholder {
+    /* Firefox 19 y superior */
+    font-size: 12px;
+}
+*:-ms-input-placeholder {
+    /* Internet Explorer 10 y superior */
+    font-size: 12px;
+}
+.fa-user, .fa-envelope{
+     color: #747582;
+     padding-right: 3px;
+}
 

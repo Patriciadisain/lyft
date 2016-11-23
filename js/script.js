@@ -60,8 +60,36 @@
             // var CelNum = digit + num;
             // guardar el num telefonico al localStorage
             window.localStorage.setItem('Cel_number', CelNum);
+            // generar código rándom
             var max = 1000;
             resultado = parseInt(Math.random()*max)
-            $(".alert_hide1").append('<span id="borrar" class="alert_hide" >Your code is <strong>LAB-'+resultado+'</strong></span>');
+            window.localStorage.setItem('codeRandom', resultado);
+            $(".alert_hide1").append('<span class="borrar alert_hide" >Your code is <strong>LAB-'+resultado+'</strong></span>');
         });
+        var nameUser = "";
+        var lastnameUser = "";
+        var emailUser = "";
+        // validar que estén correctos según las indicaciones
+        $('#nameUser,#lastnameUser,#emailUser').on('keyup',function(){
+            nameUser = $('#nameUser').val();
+            lastnameUser = $('#lastnameUser').val();
+            emailUser = $('#emailUser').val();
+            $(".borrar").remove();
+            if(nameUser == null || nameUser.length > 30 || /^\s+$/.test(nameUser)){
+                $(".name-alert").append('<span class="borrar alert_hide" >Your name is invalid </span>');
+                // $(".btn-next2").hide();
+            } else if(lastnameUser == null || lastnameUser.length > 30 || /^\s+$/.test(lastnameUser)){
+                $(".name-alert").append('<span class="borrar alert_hide" >Your lastname is invalid </span>')
+            } else if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
+                $(".name-alert").append('<span class="borrar alert_hide" >Your email is invalid </span>')
+            } else{
+                $(".btn-next2").fadeIn('slow');
+            }
+            window.localStorage.setItem('name-user', nameUser);
+            window.localStorage.setItem('lastname-user', lastnameUser);
+            window.localStorage.setItem('email-user', emailUser);
+
+        });
+
  });
+

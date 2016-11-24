@@ -6,8 +6,8 @@
         if(code || code==''){
             var text = jQuery('a[cunt_code="'+code+'"]').html();
             $(".dropdown dt a span").html(text);
-        }
-    }
+        };
+    };
     $(document).ready(function() {
         // Esconder alertas y boton
         $('.alert_hide').hide();
@@ -64,32 +64,39 @@
             var max = 1000;
             resultado = parseInt(Math.random()*max)
             window.localStorage.setItem('codeRandom', resultado);
-            $(".alert_hide1").append('<span class="borrar alert_hide" >Your code is <strong>LAB-'+resultado+'</strong></span>');
+            $('body').append('<div class="container codeAlert"><span class="borrar lab" >Your code is <strong>LAB-'+resultado+'</strong></span></div>');
+            $('.codeAlert').append('<div id="btn-code" class=" col-xs-push-1 col-xs-10 btn-next text-center "><a href="signup.html"><strong>NEXT</strong></a></div>');
         });
         var nameUser = "";
         var lastnameUser = "";
         var emailUser = "";
         // validar que estén correctos según las indicaciones
-        $('#nameUser,#lastnameUser,#emailUser').on('keyup',function(){
+        $('#nameUser,#lastnameUser').on('keyup',function(){
             nameUser = $('#nameUser').val();
             lastnameUser = $('#lastnameUser').val();
-            emailUser = $('#emailUser').val();
             $(".borrar").remove();
             if(nameUser == null || nameUser.length > 30 || /^\s+$/.test(nameUser)){
                 $(".name-alert").append('<span class="borrar alert_hide" >Your name is invalid </span>');
                 // $(".btn-next2").hide();
             } else if(lastnameUser == null || lastnameUser.length > 30 || /^\s+$/.test(lastnameUser)){
                 $(".name-alert").append('<span class="borrar alert_hide" >Your lastname is invalid </span>')
-            } else if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
-                $(".name-alert").append('<span class="borrar alert_hide" >Your email is invalid </span>')
-            } else{
-                $(".btn-next2").fadeIn('slow');
             }
-            window.localStorage.setItem('name-user', nameUser);
-            window.localStorage.setItem('lastname-user', lastnameUser);
-            window.localStorage.setItem('email-user', emailUser);
-
+        window.localStorage.setItem('name-user', nameUser);
+        window.localStorage.setItem('lastname-user', lastnameUser); 
+            // SACAR EL CORREO DE LA VALIDACIÓN, CREAR UN BOOLEANDO PARA QUE CUANDO SEA TRUE SE ACTIVE EL BOTÓN 
         });
-
+        $('#emailUser').on('keyup',function(){
+            emailUser = $('#emailUser').val();
+            $(".borrar").remove();
+            if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
+              $(".name-alert").append('<span class="borrar alert_hide">Your email is invalid </span>')
+              window.localStorage.setItem('email-user', emailUser);
+            }
+        });
+        $('#check').click(function(){
+            $(this).prop('checked', function(){
+                $(".btn-next2").fadeIn('slow');
+            });
+        });           
  });
 

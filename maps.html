@@ -14,19 +14,52 @@
 	  	<link href="css/queries.css" rel="stylesheet">
 	</head>
 	<body>
-		<section class="maps">
-			<div class="row embed-responsive embed-responsive-16by9">
-				<div class="col-xs-12">
-	
-				</div>
-
-<!-- 				<div class="col-xs-4"><div class="perfil"><a href="#perfil"></a></div></div>
-				<div class="col-xs-4"><img class="logo-xs" src="imagen/LOGO.png" alt="Logo"></div>
-				<div class="col-xs-4"><div class="gift"><a href="#"></a></div></div> -->
+		<div class="row iconos">
+			<div class="col-xs-4">
+				<a href="#"><div class="circulo perfil"><i class="fa fa-user" aria-hidden="true"></i></div></a>
 			</div>
-		</section>
+			<div class="col-xs-4">
+				<img class="logo-xs" src="imagen/logo-lyft-fucsia.png" alt="LOGO">
+			</div>
+			<div class="col-xs-4">
+				<a href="https://help.lyft.com/hc/en-us/articles/224755947-Lyft-x-Starbucks"><div class="circulo gift"><i class="fa fa-gift" aria-hidden="true"></i></div></a>
+			</div>
+		</div>
+	<div id="map">		
+	</div>
+	<div class="user-profile">
+		<div class="data-user col-xs-7">
+			<div class="circulo perfil"><i class="fa fa-user" aria-hidden="true"></i></div>
+			<p>View profile</p>	
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quis expedita minima cum! Velit, tenetur ex rerum architecto excepturi soluta tempora odit modi, porro quas libero voluptatem autem quaerat voluptas.</span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>		
+		</div>
+		<div class="transparente col-xs-5"></div>
+
+	</div>
 		<!-- NO BORRAR SCRYPT -->
 		<script type="text/javascript" src="js/jquery-3.1.1.min (1).js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
+		<script>
+			navigator.geolocation.getCurrentPosition(iniciar);
+			 function iniciar(position){
+			    var mapOptions = {
+			    // center: new google.maps.LatLng(-33.41921,-70.6418611),
+			    center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+			    zoom: 16,
+			    mapTypeId: google.maps.MapTypeId.ROADMAP};
+			    var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+			    var marker2 = new google.maps.Marker({
+			        position: map.getCenter()
+			        , title: 'You are Here'
+			        , map: map
+		        , });
+			};
+		</script>
+		<script src="http://maps.google.com/maps/api/js?key=AIzaSyDF_Wz7JkGJnoxP4QVjugmobS1rrkpj4zY&callback=iniciar"></script>
 	</body>
 </html>

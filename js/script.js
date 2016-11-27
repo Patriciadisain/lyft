@@ -1,4 +1,12 @@
- // REVISAR ESTA FUNCIÓN Y RESCATAR VARIABLES
+ // Para maps
+//  function iniciar(){
+//     var mapOptions = {
+//     center: new google.maps.LatLng(-33.41921,-70.6418611),
+//     zoom: 1,
+//     mapTypeId: google.maps.MapTypeId.ROADMAP};
+//     var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+// };
+// Primera función para países
  var cunt_code = "";
  var num = ""
  var digit ="";
@@ -16,7 +24,7 @@
         $(".dropdown dt a").click(function() {
             $(".dropdown dd ul").toggle();
         });
-        $(".dropdown dd ul li a").click(function() {
+        $(".dropdown dd ul li a").click(function() {            
             var text = $(this).html();
             $(".dropdown dt a span").html(text);
             $(".dropdown dd ul").hide();
@@ -70,15 +78,22 @@
         var nameUser = "";
         var lastnameUser = "";
         var emailUser = "";
+        var nameOk = false;
+        var lastOk = false;
+        var mailOk = false;
         // validar que estén correctos según las indicaciones
         $('#nameUser,#lastnameUser').on('keyup',function(){
             nameUser = $('#nameUser').val();
             lastnameUser = $('#lastnameUser').val();
+            nameOk = true;
+            lastOk = true;
             $(".borrar").remove();
             if(nameUser == null || nameUser.length > 30 || /^\s+$/.test(nameUser)){
+                nameOk = false;
                 $(".name-alert").append('<span class="borrar alert_hide" >Your name is invalid </span>');
                 // $(".btn-next2").hide();
             } else if(lastnameUser == null || lastnameUser.length > 30 || /^\s+$/.test(lastnameUser)){
+                lastOk = false;
                 $(".name-alert").append('<span class="borrar alert_hide" >Your lastname is invalid </span>')
             }
         window.localStorage.setItem('name-user', nameUser);
@@ -87,16 +102,20 @@
         });
         $('#emailUser').on('keyup',function(){
             emailUser = $('#emailUser').val();
+            mailOk = true;
             $(".borrar").remove();
             if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
-              $(".name-alert").append('<span class="borrar alert_hide">Your email is invalid </span>')
+               mailOk = false;
+               $(".name-alert").append('<span class="borrar alert_hide">Your email is invalid </span>')
               window.localStorage.setItem('email-user', emailUser);
             }
         });
         $('#check').click(function(){
-            $(this).prop('checked', function(){
-                $(".btn-next2").fadeIn('slow');
-            });
+            if( mailOk && lastOk && nameOk){
+                $(this).prop('checked', function(){
+                    $(".btn-next2").fadeIn('slow');
+                });
+            }
         });           
  });
 

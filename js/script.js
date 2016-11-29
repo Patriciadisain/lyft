@@ -1,4 +1,4 @@
- // Para maps
+// Para maps
 //  function iniciar(){
 //     var mapOptions = {
 //     center: new google.maps.LatLng(-33.41921,-70.6418611),
@@ -10,6 +10,7 @@
  var cunt_code = "";
  var num = ""
  var digit ="";
+
  function setCountry(code){
         if(code || code==''){
             var text = jQuery('a[cunt_code="'+code+'"]').html();
@@ -32,7 +33,7 @@
         });
         function getSelectedValue(id) {
             return $("#" + id).find("dt a span.value").html();
-        }
+        };
         $(document).bind('click', function(e) {
             var $clicked = $(e.target);
             if (! $clicked.parents().hasClass("dropdown"))
@@ -75,6 +76,8 @@
             $('body').append('<div class="container codeAlert"><span class="borrar lab" >Your code is <strong>LAB-'+resultado+'</strong></span></div>');
             $('.codeAlert').append('<div id="btn-code" class=" col-xs-push-1 col-xs-10 btn-next text-center "><a href="signup.html"><strong>NEXT</strong></a></div>');
         });
+        $('input-ver').on('keyup')
+        
         var nameUser = "";
         var lastnameUser = "";
         var emailUser = "";
@@ -116,6 +119,16 @@
                     $(".btn-next2").fadeIn('slow');
                 });
             }
-        });           
- });
+        });
+        $('#usr-pro').hide();
+        $('#profile-btn').click(function(){
+            $('#usr-pro').fadeIn(1200);
+        });
+        $('.back').click(function(){
+            $('#usr-pro').fadeOut(700);
+        })
 
+
+});
+// REVERSE GEO LOOKUP
+// GEOLOCALIZACIÓN INVERSA

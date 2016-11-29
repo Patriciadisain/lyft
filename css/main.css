@@ -21,7 +21,8 @@ a{
 }
 .logo{
     width: 100%;
-    padding: 100px;    
+    padding: 100px;
+    margin-bottom: 60px;    
 }
 .capa{
     background-color: rgba(0,0,0,0.4);
@@ -64,6 +65,7 @@ a{
     margin-top: 15px;
 }
 .btn-next{
+    margin-top: 25px;
     display: inline-block;
     align-content: center;
 }
@@ -98,7 +100,6 @@ a{
     cursor: pointer;
     display: block;
     padding: 5px;
-    border-radius: 5px;
     white-space: nowrap;
 }
 .dropdown dt a img {
@@ -111,7 +112,6 @@ a{
     width: 15px;
     height: 10px;
     /*box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;*/
-    border-radius: 5px;
 }
 .dropdown dt a span span {
     display: inline-block;
@@ -176,7 +176,7 @@ a{
     padding: 5px 5px;
     position: absolute;    
     width: 100%;
-    border:1px solid #FC07BF;;
+    border:1px solid #FC07BF;
     list-style: none;
     max-height: 170px;
     overflow-y: scroll;
@@ -270,7 +270,7 @@ dl.dropdown dt span:nth-child(3) {
   margin: 3px 0;
   display: block;
   background-color: rgba(51,51,51,0.8);
-  padding: 2px 8px;
+  padding: 2px 10px;
   color: white;
   text-align: center;
   border-radius: none !important;
@@ -289,7 +289,7 @@ dl.dropdown dt span:nth-child(3) {
 .lab{
     text-align: center;
     position: absolute;
-    top: 36%;
+    top: 30%;
     left: 20%;
     right: 20%;
     font-size: 35px;
@@ -326,13 +326,10 @@ dl.dropdown dt span:nth-child(3) {
     /* Internet Explorer 10 y superior */
     font-size: 12px;
 }
-.fa-user, .fa-envelope{
-     color: #747582;
-     padding-right: 3px;
-}
 #check{
     color: #FC07BF;
-    margin: 0 4px;
+    margin: 0 5px 0 20px;
+
 }
 .terms {
     font-size: 11px;
@@ -378,7 +375,7 @@ dl.dropdown dt span:nth-child(3) {
     font-size: 40px;
     color: white;
     z-index: 3;
-    margin: 18% 0 0 24%;
+    margin: 20% 0 0 26%;
 }
 .user-profile{
     z-index: 20;
@@ -389,10 +386,49 @@ dl.dropdown dt span:nth-child(3) {
  }
 .data-user{
     background: white;
+    height: 100vh;
 }
 .transparente{
     background: rgba(0,0,0,0.4);
     height: 100vh;
 }
+.slider{
+    display: block;
+    height: 7.2%;
+    color: rgb(179,220,237);
+
+}
+.slider-l {
+    font-weight: bold;
+    color: #FC07BF ;
+    padding: 10px;
+
+}
+.slider-l:hover{
+    text-decoration: none;
+    color: #ACABAB;
+ }
+.slider-ico{
+    color: #ACABAB;
+}
+.slider-ico:hover{
+    color: #FC07BF;
+}
+.back{
+    font-size: 20px;
+    padding: 2px;
+    margin-top: 5%;
+}
+h5{
+    display: inline;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.input-ver{
+    border-radius: 5px;
+    padding: 10px;
+    width: 60%;
+}
+
 
 

@@ -70,14 +70,11 @@
             // guardar el num telefonico al localStorage
             window.localStorage.setItem('Cel_number', CelNum);
             // generar código rándom
-            var max = 1000;
-            resultado = parseInt(Math.random()*max)
+            resultado = Math.floor(Math.random() * 899 + 100)
             window.localStorage.setItem('codeRandom', resultado);
             $('body').append('<div class="container codeAlert"><span class="borrar lab" >Your code is <strong>LAB-'+resultado+'</strong></span></div>');
-            $('.codeAlert').append('<div id="btn-code" class=" col-xs-push-1 col-xs-10 btn-next text-center "><a href="signup.html"><strong>NEXT</strong></a></div>');
+            $('.codeAlert').append('<div id="btn-code" class=" col-xs-push-1 col-xs-10 btn-next text-center "><a href="validate.html"><strong>NEXT</strong></a></div>');
         });
-        $('input-ver').on('keyup')
-        
         var nameUser = "";
         var lastnameUser = "";
         var emailUser = "";
@@ -107,11 +104,11 @@
             emailUser = $('#emailUser').val();
             mailOk = true;
             $(".borrar").remove();
-            if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
-               mailOk = false;
-               $(".name-alert").append('<span class="borrar alert_hide">Your email is invalid </span>')
-              window.localStorage.setItem('email-user', emailUser);
-            }
+                if(emailUser == null || emailUser.length > 50 || /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(emailUser) != true){
+                   mailOk = false;
+                   $(".name-alert").append('<span class="borrar alert_hide">Your email is invalid </span>')
+                window.localStorage.setItem('email-user', emailUser);
+                }
         });
         $('#check').click(function(){
             if( mailOk && lastOk && nameOk){
@@ -126,9 +123,26 @@
         });
         $('.back').click(function(){
             $('#usr-pro').fadeOut(700);
-        })
-
-
+        });
+        $('.btngo').hide();
+        $('#btn-go').click(function(ev){
+            // evitamos que el a vaya a algun lugar
+            $(".borrar").remove();         
+            ev.preventDefault();
+            var numberResc = window.localStorage.getItem('codeRandom');
+             inputTotal = $('.input-ver1').val() + $('.input-ver2').val() + $('.input-ver3').val();
+             // console.log(inputTotal);
+             if(numberResc == inputTotal){
+                $('.btngo').fadeOut(700);
+             } else{
+             $('.add-1').append('<span class="borrar alert_1">Please, verify your code</span>')}
+        });
 });
+
+            // llamar con get setItem lacation.replace(pagina) sino alert
+
+        // var input_1 = 
+        // var input_2 = 
+        // var input_3 =
 // REVERSE GEO LOOKUP
 // GEOLOCALIZACIÓN INVERSA
